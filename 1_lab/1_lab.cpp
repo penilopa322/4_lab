@@ -71,7 +71,7 @@ void mouseCallback(GLFWwindow* window, double xposIn, double yposIn) {
     float yoffset = lastY - ypos;
     lastX = xpos;
     lastY = ypos;
-    float sensitivity = 1.0f;
+    float sensitivity = 0.1f;
     xoffset *= sensitivity;
     yoffset *= sensitivity;
     yaw += xoffset;
@@ -142,7 +142,7 @@ int main() {
     Shader shader("vertex.glsl", "fragment.glsl");
 
     while (!glfwWindowShouldClose(window)) {
-        const float cameraSpeed = 0.05f;
+        const float cameraSpeed = 0.01f;
         if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
             cameraPos += cameraSpeed * cameraFront;
         if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
